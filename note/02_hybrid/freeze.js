@@ -16,4 +16,8 @@ console.log(
 )
 
 person.address = new Address('KR', 'Seoul', 'Gwanak', '123-45', 'Mummu Gil')
-console.log(person.address)
+const zipPath = ['address', 'zip']
+const zipLens = R.lens(R.path(zipPath), R.assocPath(zipPath))
+console.log(
+  R.view(zipLens, person)
+)
