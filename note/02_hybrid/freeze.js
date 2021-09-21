@@ -7,5 +7,8 @@ const lastnameLens = R.lensProp('lastname')
 const newPerson = R.set(lastnameLens, 'SJ', person)
 console.log(
   R.view(lastnameLens, person),
-  R.view(lastnameLens, newPerson)
+  R.view(lastnameLens, newPerson),
+
+  person.lastname,
+  newPerson.lastname
 )
