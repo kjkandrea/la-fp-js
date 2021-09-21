@@ -38,6 +38,11 @@ export default class Person {
     return this._address;
   }
 
+  set address(address) {
+    this._address = address;
+    return this
+  }
+
   get fullname() {
     return `${this._firstname} ${this._lastname}`;
   }
