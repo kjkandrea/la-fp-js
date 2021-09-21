@@ -5,7 +5,7 @@
  * Author: Luis Atencio
  */
 export default class Person {
-  constructor(ssn,firstname, lastname, birthYear = null, address = null) {
+  constructor(ssn, firstname, lastname, birthYear = null, address = null) {
     this._ssn = ssn;
     this._firstname = firstname;
     this._lastname = lastname;
