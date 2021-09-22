@@ -1,4 +1,5 @@
 import R from 'ramda';
+import { map } from 'lodash'
 
 const checkType = R.curry((typeDef, obj) => {
   if (!R.is(typeDef, obj)) {
