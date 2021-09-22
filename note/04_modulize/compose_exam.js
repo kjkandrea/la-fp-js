@@ -1,11 +1,17 @@
-import { compose } from 'ramda'
+import { compose, partial } from 'ramda'
 
 const trim = str => str.trim()
-
 const normalize = str => str.replace(/\-/g, '')
-
 const validLength = (param, str) => str.length === param
 
-const checkLengthSsn = str => validLength(11, str)
+const checkLengthSsn = partial(validLength, [11])
 
-console.log(checkLengthSsn('01234567891'))
+const cleanInput = compose(normalize, trim)
+const isValidSsn = compose(checkLengthSsn, cleanInput)
+
+const data = '010-1234-5678'
+
+console.log(
+  cleanInput(data), // 01012345678
+  isValidSsn(data) // true
+)
