@@ -11,8 +11,17 @@ const smartestStudent = R.compose(
   R.zip
 )
 
+const smartestStudent2 = R.pipe( // 파이프는 compose 와 방향이 다를 뿐이구나!!
+  R.zip,
+  R.sortBy(R.prop(1)),
+  R.reverse,
+  R.pluck(0),
+  R.head
+)
+
 function main() {
   console.log(
-    smartestStudent(students, grades) // SJ
+    smartestStudent(students, grades), // SJ
+    smartestStudent2(students, grades)
   )
 }main()
