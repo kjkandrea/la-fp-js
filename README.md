@@ -21,3 +21,7 @@
 
 * `partial` : 다항 함수의 인자 일부를 미리 할당해놓는다! 이를 통해 여러 파생함수들을 생산해낼 수 있음. curry 와 관련있음.
 * `compose` : 함수를 체이닝하여 결합한다. `A(B(C(value)))` 라면 `compose(A, B, C)(value)` 로 표현할 수 있따.
+
+## 함수 조합기 (function combinator)
+
+TODO. 지금 해봐야 다 잊어버릴것같아서 패스 ㅋㅋ
