@@ -4,6 +4,7 @@ const students = ['MM', 'SJ', 'JK', 'YS']
 const grades = [10, 100, 90, 80]
 
 const smartestStudent = R.compose(
+  R.sortBy(R.prop(1)),
   R.zip
 )
 
