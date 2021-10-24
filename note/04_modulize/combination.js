@@ -10,8 +10,14 @@ const tapTest = R.pipe(
 
 /*alt*/
 const rand = handleRandom => R.pipe(Math.random, handleRandom, Math.floor)()
+const alt = R.curry((func1, func2, val) => func1(val) || func2(val))
+const isOdd = v => Boolean(v % 2)
+const warnEven = () => console.log('is even!!')
+
 const altTest = R.pipe(
-  console.log
+  R.tap(console.log),
+  alt(isOdd, warnEven),
 )
 const randUnderTen = rand(v => (v * 10) + 1)
+
 altTest(randUnderTen)
