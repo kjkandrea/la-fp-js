@@ -21,3 +21,20 @@ const altTest = R.pipe(
 const randUnderTen = rand(v => (v * 10) + 1)
 
 altTest(randUnderTen)
+
+/*seq*/
+const seq = function() {
+  const functions = Array.prototype.slice.call(arguments)
+  return function(val) {
+    functions.forEach(fn => fn(val))
+  }
+}
+const seqTest = R.pipe(
+  R.map(v => v * 2),
+  seq(
+    v => console.log('first : ', v[0]),
+    v => console.log('last : ', v[v.length - 1])
+  ),
+)
+
+seqTest([1,2,3,4,5])
